@@ -1,5 +1,6 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Form
 from fastapi.templating import Jinja2Templates
+from typing import Annotated
 
 from .schemas.data_model import Card
 
@@ -25,3 +26,7 @@ async def root(request: Request):
             **dummy_card.model_dump(),
         },
     )
+
+@app.post("/select-category/")
+async def selectcategory(category_name: Annotated[str, Form()]):
+    return {"category": category_name}
