@@ -1,2 +1,2 @@
 # linkder
-The best way to get your next job
+The best way to be found professionally
