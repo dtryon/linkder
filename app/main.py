@@ -18,5 +18,10 @@ async def root(request: Request):
     message = "The best way to be found professionally"
     return templates.TemplateResponse(
         "index.html",
-        {"request": request, "message": message, **dummy_card.model_dump()},
+        {
+            "title": f"Linkder: {message}",
+            "request": request,
+            "message": message,
+            **dummy_card.model_dump(),
+        },
     )
